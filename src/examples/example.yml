@@ -1,0 +1,16 @@
+description: |
+  Used for sorting out Orb dev and devops
+usage:
+  version: 2.1
+
+  orbs:
+    test-orb: maxjeffos/test-orb@x.y.z
+
+  jobs:
+    build:
+      docker:
+        - image: circleci/node:12
+      steps:
+        - checkout
+        - maxjeffos/test-orb:
+            message: "hello"

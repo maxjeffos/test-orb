@@ -1,0 +1,15 @@
+description: Show a message
+parameters:
+  message:
+    description: The message you want to echo
+    type: string
+    default: "Hello! (default message)"
+
+steps:
+  - run:
+      name: Show Message
+      environment:
+        MY_ENV_VAR: CIRCLECI_ORB
+      command: |
+        echo "message: <<parameters.message>>"
+        echo "MY_ENV_VAR: ${MY_ENV_VAR}"
